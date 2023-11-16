@@ -1,0 +1,324 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior:smooth;
+}
+body{
+    /* background: #101920; */
+    background: black;
+    color: white;
+}
+img{
+    width: 100%;
+    max-width: 500px;
+}
+.container{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header{
+    background: black;
+    padding: 2rem 0;
+    text-align: center;
+}
+header div h1{
+    margin: 0 0 1rem 5rem;
+}
+header div h1 span{
+    color: #ea1538;;
+}
+
+.nav-toggle {
+    cursor: pointer;
+    border: 0;
+    width: 3em;
+    height: 3em;
+    padding: 0em;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    transition: opacity 250ms ease;
+    
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: .75;
+}
+
+.hamburger {
+    width: 50%;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    background: black;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 100%;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
+}
+
+.nav {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+}
+
+.nav--visible {
+    visibility: visible;
+    height: auto;
+    position: relative;
+} 
+nav{
+    width: 100%;
+}
+.nav__item{
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+.nav__link{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: sans-serif;
+    position: relative;
+}
+.nav__link::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ea1538;
+    transition: 0.5s;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+.nav__link:hover::after,
+.nav__link:focus::after{
+    width: 100%;
+}
+.horizontal-line{
+    width: 90%;
+    height: 1px;
+    margin: 0 auto;
+    max-width: 1100px;
+    background: white;
+}
+/* ----------navigation ends here------------ */
+
+.home{
+    padding: 1rem 0 0 0;
+    text-align: center;
+    margin: 0;
+}
+
+.home .intro{
+    margin-top: 3rem;
+ }
+
+.home h4{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200;
+    font-size: calc(20px + (45 - 20) * ((100vw - 300px) / (1600 - 300)));
+    margin-bottom: .3rem;
+    line-height: 1.2;
+}
+
+.home p{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 500;
+    font-size: calc(12px + (19 - 12) * ((100vw - 300px) / (1600 - 300)));
+    line-height: 1.2;
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem;
+}
+
+.home h1 {
+    opacity: .75;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(40px + (120 - 40) * ((100vw - 300px) / (1600 - 300)));
+    margin-bottom: 1rem;
+}
+
+.btn{
+    text-decoration: none;
+    color: white;
+    background: #ea1538;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn:hover{
+    border: 1px solid white;
+}
+
+
+
+/* ----------hone section ends here------------ */
+
+section.about{
+    background: #343a40;
+    padding-top: 3rem;
+}
+
+section.about h3{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200;
+    font-size: calc(20px + (45 - 20) * ((100vw - 300px) / (1600 - 300)));
+    margin-bottom: 1.4rem;
+}
+
+section.about h5{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200;
+    font-size: calc(15px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
+    margin-bottom: 1rem;
+}
+
+.col img{
+    border-radius: 20px;
+}
+
+/* ------------about section ends here----------------------- */
+
+
+.contact-left{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+.contact-left h1{
+    font-family: 'Dosis', sans-serif;
+    margin-bottom: 1rem;
+}
+.contact-left p i{
+    margin-right: .5rem;
+    font-size: 1.3rem;
+    color: #ea1538;
+}
+.contact-left a{
+    color: white;
+    display: inline-block;
+    margin: .5rem .3rem;
+    font-size: 1.7rem;
+    transition: transform .4s;
+}
+.contact-left a i:hover{
+    color: #ea1538;
+    transform: translateY(-5px);
+}
+.contact-left p{
+    font-family: 'Dosis', sans-serif;
+    margin-bottom: .75rem;
+}
+
+
+.contact-right{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    margin: 10px 0;
+    padding: 15px;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* ----------------contact section ends here------------ */
+
+
+
+/* ------------------for desktop size--------------------------------- */
+@media (min-width:800px){
+
+    .nav-toggle{
+        display: none;
+    }
+
+    .row{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav{
+        visibility: visible;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    .nav__list{
+        display: flex;
+    }
+
+    .nav__item{
+        margin: 0 0 0 2em;
+    }
+
+    .nav-header{
+        margin: 0;
+        width: 40%;
+    }
+ /* ----------navigation ends here------------ */
+
+ /* .home{
+    text-align: left;
+ } */
+
+ .home .intro{
+    margin-top: 8rem;
+ }
+ /* -----------home styling ends here------------- */
+
+section.about .col{
+    width: 45%;
+}
+
+.col + .col{
+    align-self: center;
+}
+
+/* ------------about section ends here------------------ */
+
+
+
+}
