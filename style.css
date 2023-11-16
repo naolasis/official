@@ -261,6 +261,12 @@ form input, form textarea{
     font-size: 15px;
 }
 
+#msg{
+    color: #61b752;
+    display: block;
+    margin-bottom: 1rem;
+}
+
 /* ----------------contact section ends here------------ */
 
 

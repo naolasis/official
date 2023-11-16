@@ -68,15 +68,35 @@
                 <a href=""><i class="fa-brands fa-github"></i></a>
             </div>
             <div class="contact-right">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" onblur="getVal()" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <input type="submit" class="btn">
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </section>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx7H-1IihEuroBc3UZ7j6d_C2OoGL8zm7r_KxuV3Cb_NEcEIA1Tjht7MIASVJr3i6J6/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message Sent Successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },3000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 
     <script src="app.js"></script>
     
